@@ -1,0 +1,49 @@
+main .prenda-caja {
+    display: inline-block;
+}
+
+main .titulo-prenda {
+    font-size: 2.5rem;
+    margin: 50px 0px;
+}
+
+main .prendaa {
+    width: 100%;
+}
+
+main .prenda-info {
+    font-size: 1.7rem;
+    margin-top: 20px;
+}
+
+main .precio-prenda {
+    font-size: 2rem;
+}
+
+main .contacto-prenda {
+    font-size: 2.5rem;
+}
+
+main .prenda-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* MEDIAQUIERES 700PX */
+@media screen and (min-width:700px) {
+    main .prendaa {
+        width: 80%;
+    }
+}
+
+/* MEDIAQUIERES PARA 1000PX */
+@media screen and (min-width:1000px) {
+    main .prendaa {
+        width: 50%;
+    }
+
+}
+

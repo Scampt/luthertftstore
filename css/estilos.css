@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Bukhari Script";
-    src: url("../fonts/Bukhari\ Script.ttf");
+    src: url("../fonts/volaroid.script.ttf");
 }
 
 * {
@@ -15,10 +15,32 @@ html {
 
 body {
     background-color: #000;
+    text-align: center;
+    font-family: "volaroid";
     color: #fff
 }
-/* ESTILOS PARA EL HEADER */
+
+.arriba {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.arriba a {
+    text-decoration: none;
+    color: green;
+}
+
+.arriba a:hover {
+    opacity: .7;
+}
+
+.fa-angle-up {
+    font-size: 2.5rem;
+}
+
     /* ESTILOS PARA EL HEADER */
+
     header .link-logo {
         width: 20%;
         position: relative;
@@ -70,11 +92,13 @@ body {
     
     .nav-item {
         color: #fff;
+        font-size: 16px;
         text-decoration: none;
         --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
     }
     
     .nav-item:hover {
+        color: #fff;
         --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
     
@@ -100,7 +124,7 @@ body {
     .nav-menu {
         position: relative;
         top: 0;
-        background: rgb(255, 255, 255, 0.01);
+        /* background: rgb(255, 255, 255, 0.01); */
         background-size: 320px;
         background-attachment: fixed;
         width: 20%;
@@ -120,6 +144,10 @@ body {
     }
 }
 /* ESTILOS PARA EL MAIN */
+main .galeria-titulo {
+    padding: 20px;
+}
+
 main .titulo {
     font-size: 4rem;
     text-align: center;
@@ -140,6 +168,10 @@ main .contenedor-prenda {
 main .link-img {
     width: 70%;
     margin: auto;
+}
+
+.link-img:hover {
+    opacity: .4;
 }
 
 main .prenda {
@@ -184,69 +216,10 @@ main .contactar {
 
 /* ESTILOS PARA EL FOOTER */
 footer {
-    width: 100%;
-    position: relative;
-    margin-top: 120px;
-    background: #000;
-}
-
-/* FAQS */
-.faq-title {
-    font-family: "Bukhari Script";
-
-    text-align: center;
-    color: #fff;
-    font-size: 40px;
-    margin: 20px 0;
-}
-
-.asks {
-    width: 500px;
-    margin: auto;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-
-.contain-ask {
-    background: #cecece;
-    padding: 20px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .3s ease all;
-    cursor: pointer;
-}
-
-.ask {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ask img {
-    width: 14px;
-}
-
-.answer {
+    background-color: #fff;
     color: #000;
-    line-height: 30px;
-    max-height: 0;
-    opacity: 0;
-    transition: .3s ease all;
-}
-
-.contain-ask.actived .answer{
-    opacity: 1;
-    margin-top: 20px;
-}
-
-.contain-ask.actived img {
-    transform: rotate(45deg);
+    width: 100%;
+    margin-top: 120px;
 }
 
 /* FOOTER 2 */
@@ -264,20 +237,21 @@ footer {
 }
 
 .social-title {
-    color: #fff;
-    font-family: "Bukhari Script";
+    font-size: 2.5rem;
+    font-family: "volaroid";
     margin-bottom: 10px;
 }
 
 .social ul li {
     list-style: none;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .link {
+    color: #000;
     flex-direction: column;
     width: 100px;
-    color: #fff;
     text-decoration: none;
 }
 
@@ -286,8 +260,9 @@ footer {
 }
 
 .link:hover {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid  var(--bs-link-hover-color);
 }
+
 
 .luther-footer {
     display: none;
@@ -305,16 +280,108 @@ footer {
 }
 
 .help-title {
-    color: #fff;
     margin-bottom: 10px;
-    font-family: "Bukhari Script";
+    font-size: 2.5rem;
+    font-family: "volaroid";
 }
 
 .help ul li {
     list-style: none;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .help-link:hover {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
+}
+
+/* MEDIAQUIERE PARA 600PX */
+@media screen and (min-width:600px) {
+    header .nav-item {
+        font-size: 20px;
+    }
+
+/* MEDIAQUIERES 700PX */
+@media screen and (min-width:700px) {
+    header .logo {
+        width: 100%;
+    }
+}
+
+/* MEDIAQUIERES PARA 1000PX */
+@media screen and (min-width:1000px) {
+    header  .nav-container{
+        width: 100%;
+        align-items: center;
+        display: flex;
+    }
+
+    header  .logo {
+        width: 150px;
+        position: relative;
+        right: 30%;
+    }
+
+    header .nav-menu {
+        margin-right: 50px;
+    }
+
+    header .nav-item {
+        font-size: 30px;
+    }
+
+    header .link-logo {
+        width: 93px;
+    }
+
+    footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-one {
+        width: 50%;
+    }
+
+    .social-title {
+        font-size: 30px;
+    }
+
+    footer .faq-title {
+        width: 100%;
+        margin-right: 5px;
+    }
+
+    .footer-luther {
+        margin-right: 50px;
+    }
+
+    .asks {
+        margin: auto;
+        margin-bottom: 5px;
+    }
+
+    .luther-footer {
+        display: inline-block;
+        width: 250px;
+    }
+
+    .luther-footer:hover {
+        opacity: .7;
+    }
+
+    footer .footer-two {
+        width: 50%;
+        margin: 0;
+    }
+
+    .help-title {
+        font-size: 30px;
+    }
+
+    footer .help {
+        margin-bottom: 5%;
+    }
+    }
 }
