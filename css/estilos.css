@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Bukhari Script";
+    src: url("../fonts/Bukhari\ Script.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,16 +14,307 @@ html {
 }
 
 body {
-    background-color: darkgray;
+    background-color: #000;
+    color: #fff
+}
+/* ESTILOS PARA EL HEADER */
+    /* ESTILOS PARA EL HEADER */
+    header .link-logo {
+        width: 20%;
+        position: relative;
+        right: 16%;
+        margin: auto;
+        text-decoration: none;
+        color: none;
+    }
+    
+    header .logo {
+        width: 150%;
+    }
+    
+    .logo:hover {
+        opacity: .8;
+    }
+    
+    
+    header .fa-bars {
+        font-size: 30px;
+    }
+    
+    header .nav-container {
+        display: flex;
+        height: 100%;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-menu {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 3em;
+    }
+    
+    .nav-item::after {
+        content: "";
+        display: block;
+        background: #fff;
+        width: 90%;
+        margin-top: 3px;
+        height: 3px;
+        clip-path: var(--clippy);
+        transition: clip-path .5s;
+    
+    }
+    
+    .nav-item {
+        color: #fff;
+        text-decoration: none;
+        --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    
+    .nav-item:hover {
+        --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    .nav-label, .nav-input {
+        display: none;
+    }
+    
+    header nav {
+        color: #fff;
+    }
+
+/* MEDIAQUERIE PARA EL NAV  MAX-WIDTH 600px */
+@media (max-width:600px) {
+    .nav-label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-container {
+        text-align: center;
+    }
+
+    .nav-menu {
+        position: relative;
+        top: 0;
+        background: rgb(255, 255, 255, 0.01);
+        background-size: 320px;
+        background-attachment: fixed;
+        width: 20%;
+        height: 200px;
+        right: 0;
+        left: 4%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at right);
+        transition: clip-path 1s ease;
+    }
+
+    .nav-input:checked + .nav-menu {
+        clip-path: circle(100% at center);
+    }
+}
+/* ESTILOS PARA EL MAIN */
+main .titulo {
+    font-size: 4rem;
+    text-align: center;
 }
 
-main figure {
-    width: 100%;
+main .contenedor-prendas {
     display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
-main .galeria {
+main .contenedor-prenda {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    text-align: center;
+}
+
+main .link-img {
+    width: 70%;
+    margin: auto;
+}
+
+main .prenda {
+    width: 100%;
+}
+
+main .titulo {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    margin: 10px 0;
+}
+.titulo:hover {
+    text-decoration: underline;
+}
+
+main .precio {
+    font-size: 1.5rem;
+}
+
+main .contactar {
+    font-size: 1.5rem;
+    font-style:italic;
+    color: #fff;
+}
+.redes-sociales a {
+    text-decoration: none;
+    font-size: 2.7rem;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.fa-facebook:hover {
+    color: #1877f2;
+}
+.fa-whatsapp:hover {
+    color: #25d366;
+}
+.fa-instagram:hover {
+    color: #833ab4;
+}
+
+/* ESTILOS PARA EL FOOTER */
+footer {
+    width: 100%;
+    position: relative;
+    margin-top: 120px;
+    background: #000;
+}
+
+/* FAQS */
+.faq-title {
+    font-family: "Bukhari Script";
+
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.asks {
+    width: 500px;
+    margin: auto;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.contain-ask {
+    background: #cecece;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.ask {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ask img {
+    width: 14px;
+}
+
+.answer {
+    color: #000;
+    line-height: 30px;
+    max-height: 0;
+    opacity: 0;
+    transition: .3s ease all;
+}
+
+.contain-ask.actived .answer{
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.contain-ask.actived img {
+    transform: rotate(45deg);
+}
+
+/* FOOTER 2 */
+.footer-two {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+}
+
+/* REDES */
+.social {
+    width: 50%;
+    text-align: center;
+}
+
+.social-title {
+    color: #fff;
+    font-family: "Bukhari Script";
+    margin-bottom: 10px;
+}
+
+.social ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.link {
+    flex-direction: column;
+    width: 100px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.twitter {
+    margin-top: 10px;
+}
+
+.link:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.luther-footer {
+    display: none;
+}
+
+.luther-link-footer {
+    text-decoration: none;
+}
+
+/* AYUDA */
+.help {
+    width: 50%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.help-title {
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: "Bukhari Script";
+}
+
+.help ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.help-link:hover {
+    border-bottom: 1px solid #fff;
 }
