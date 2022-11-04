@@ -18,7 +18,7 @@
 		<nav>
 			<div class="nav-container" id="header">
 
-				<a href="https://scampt.github.io/luthertftstore" class="link-logo">
+				<a href="https://luthertftstore.herokuapp.com" class="link-logo">
 					<img src="img/logo.png" loading="lazy" class="logo" alt="">
 				</a>
 				
@@ -28,7 +28,7 @@
 				<input type="checkbox" id="menu" class="nav-input">
 
 				<div class="nav-menu">
-					<a href="" class="nav-item">Home</a>
+					<a href="https://luthertftstore.herokuapp.com" class="nav-item">Home</a>
 					<a href="#social" class="nav-item">Social</a>
 				</div>
 			</div>
